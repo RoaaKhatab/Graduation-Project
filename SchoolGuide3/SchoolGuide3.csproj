@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -126,10 +132,27 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Account.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903140135392_FirstMigration.cs" />
+    <Compile Include="Migrations\201903140135392_FirstMigration.Designer.cs">
+      <DependentUpon>201903140135392_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903140138470_SeedUsers.cs" />
+    <Compile Include="Migrations\201903140138470_SeedUsers.Designer.cs">
+      <DependentUpon>201903140138470_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903141553582_FirstMigration1.cs" />
+    <Compile Include="Migrations\201903141553582_FirstMigration1.Designer.cs">
+      <DependentUpon>201903141553582_FirstMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\OurDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,12 +160,120 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Content\css\slick.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\theme-color\burlywood-theme.css" />
+    <Content Include="Content\css\theme-color\dark-red-theme.css" />
+    <Content Include="Content\css\theme-color\default-theme.css" />
+    <Content Include="Content\css\theme-color\green-theme.css" />
+    <Content Include="Content\css\theme-color\orange-theme.css" />
+    <Content Include="Content\css\theme-color\pink-theme.css" />
+    <Content Include="Content\css\theme-color\purple-theme.css" />
+    <Content Include="Content\css\theme-color\red-theme.css" />
+    <Content Include="Content\css\theme-color\violet-theme.css" />
+    <Content Include="Content\css\theme-color\yellow-theme.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\about-us.jpg" />
+    <Content Include="Content\img\bc_2010_daycare_260_wide.jpg" />
+    <Content Include="Content\img\blog\blog-1.jpg" />
+    <Content Include="Content\img\blog\blog-2.jpg" />
+    <Content Include="Content\img\blog\blog-3.jpg" />
+    <Content Include="Content\img\counter-bg.jpg" />
+    <Content Include="Content\img\courses\1.jpg" />
+    <Content Include="Content\img\courses\2.jpg" />
+    <Content Include="Content\img\courses\3.jpg" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\gallery\big\1.jpg" />
+    <Content Include="Content\img\gallery\big\2.jpg" />
+    <Content Include="Content\img\gallery\big\3.jpg" />
+    <Content Include="Content\img\gallery\big\4.jpg" />
+    <Content Include="Content\img\gallery\big\5.jpg" />
+    <Content Include="Content\img\gallery\big\6.jpg" />
+    <Content Include="Content\img\gallery\big\7.jpg" />
+    <Content Include="Content\img\gallery\big\8.jpg" />
+    <Content Include="Content\img\gallery\big\9.jpg" />
+    <Content Include="Content\img\gallery\fancybox_buttons.png" />
+    <Content Include="Content\img\gallery\fancybox_loading%402x.gif" />
+    <Content Include="Content\img\gallery\fancybox_loading.gif" />
+    <Content Include="Content\img\gallery\fancybox_overlay.png" />
+    <Content Include="Content\img\gallery\fancybox_sprite%402x.png" />
+    <Content Include="Content\img\gallery\fancybox_sprite.png" />
+    <Content Include="Content\img\gallery\small\1.jpg" />
+    <Content Include="Content\img\gallery\small\2.jpg" />
+    <Content Include="Content\img\gallery\small\3.jpg" />
+    <Content Include="Content\img\gallery\small\4.jpg" />
+    <Content Include="Content\img\gallery\small\5.jpg" />
+    <Content Include="Content\img\gallery\small\6.jpg" />
+    <Content Include="Content\img\gallery\small\7.jpg" />
+    <Content Include="Content\img\gallery\small\8.jpg" />
+    <Content Include="Content\img\gallery\small\9.jpg" />
+    <Content Include="Content\img\loader.gif" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\mine\1.jpg" />
+    <Content Include="Content\img\mine\1548390713562.jpg" />
+    <Content Include="Content\img\mine\1_family_large-600x215.jpg" />
+    <Content Include="Content\img\mine\8568kkl.jpg" />
+    <Content Include="Content\img\mine\americanflag.jpg" />
+    <Content Include="Content\img\mine\americanflag2.jpg" />
+    <Content Include="Content\img\mine\british.gif" />
+    <Content Include="Content\img\mine\britsh.png" />
+    <Content Include="Content\img\mine\Children-Read-Desktop-Wallpaper-For-PC.jpg" />
+    <Content Include="Content\img\mine\egypt.png" />
+    <Content Include="Content\img\mine\france.jpg" />
+    <Content Include="Content\img\mine\Gerberas_Little_girls_498917_3840x2400.jpg" />
+    <Content Include="Content\img\mine\kids-photo-1.jpg" />
+    <Content Include="Content\img\mine\us.png" />
+    <Content Include="Content\img\slider\1.jpg" />
+    <Content Include="Content\img\slider\2.jpg" />
+    <Content Include="Content\img\slider\3.jpg" />
+    <Content Include="Content\img\teachers\teacher-01.png" />
+    <Content Include="Content\img\teachers\teacher-02.png" />
+    <Content Include="Content\img\teachers\teacher-03.png" />
+    <Content Include="Content\img\teachers\teacher-04.png" />
+    <Content Include="Content\img\testimonial-1.png" />
+    <Content Include="Content\img\testimonial-2.png" />
+    <Content Include="Content\img\testimonial-3.png" />
+    <Content Include="Content\img\testimonial-bg.jpg" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery.counterup.js" />
+    <Content Include="Content\js\jquery.fancybox.pack.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.mixitup.js" />
+    <Content Include="Content\js\slick.js" />
+    <Content Include="Content\js\waypoints.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\img\mine\egypt.webp" />
+    <Content Include="Content\scss\base\_base.scss" />
+    <Content Include="Content\scss\base\_mixins.scss" />
+    <Content Include="Content\scss\base\_variables.scss" />
+    <Content Include="Content\scss\layouts\_footer.scss" />
+    <Content Include="Content\scss\layouts\_header.scss" />
+    <Content Include="Content\scss\layouts\_nav.scss" />
+    <Content Include="Content\scss\modules\_buttons.scss" />
+    <Content Include="Content\scss\modules\_responsive.scss" />
+    <Content Include="Content\scss\modules\_sections.scss" />
+    <Content Include="Content\scss\modules\_theme-color.scss" />
+    <Content Include="Content\scss\modules\_typography.scss" />
+    <Content Include="Content\scss\style.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -168,10 +299,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\login.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ViewUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -185,6 +320,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903140135392_FirstMigration.resx">
+      <DependentUpon>201903140135392_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903140138470_SeedUsers.resx">
+      <DependentUpon>201903140138470_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903141553582_FirstMigration1.resx">
+      <DependentUpon>201903141553582_FirstMigration1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
