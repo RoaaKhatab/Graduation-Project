@@ -135,6 +135,7 @@
     <Compile Include="Controllers\Account.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,17 +143,39 @@
     <Compile Include="Migrations\201903140135392_FirstMigration.Designer.cs">
       <DependentUpon>201903140135392_FirstMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903140138470_SeedUsers.cs" />
-    <Compile Include="Migrations\201903140138470_SeedUsers.Designer.cs">
-      <DependentUpon>201903140138470_SeedUsers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201903141553582_FirstMigration1.cs" />
     <Compile Include="Migrations\201903141553582_FirstMigration1.Designer.cs">
       <DependentUpon>201903141553582_FirstMigration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903310953095_Schools.cs" />
+    <Compile Include="Migrations\201903310953095_Schools.Designer.cs">
+      <DependentUpon>201903310953095_Schools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903310958076_Schools1.cs" />
+    <Compile Include="Migrations\201903310958076_Schools1.Designer.cs">
+      <DependentUpon>201903310958076_Schools1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903311012253_Schools2.cs" />
+    <Compile Include="Migrations\201903311012253_Schools2.Designer.cs">
+      <DependentUpon>201903311012253_Schools2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903311411129_Schools11.cs" />
+    <Compile Include="Migrations\201903311411129_Schools11.Designer.cs">
+      <DependentUpon>201903311411129_Schools11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903311413541_Schools12.cs" />
+    <Compile Include="Migrations\201903311413541_Schools12.Designer.cs">
+      <DependentUpon>201903311413541_Schools12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903311618136_Schools13.cs" />
+    <Compile Include="Migrations\201903311618136_Schools13.Designer.cs">
+      <DependentUpon>201903311618136_Schools13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Schools.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\OurDbContext.cs" />
+    <Compile Include="Models\WishList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -304,9 +327,15 @@
     <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\ViewUsers.cshtml" />
+    <Content Include="Views\Admin\ViewSchools.cshtml" />
+    <Content Include="Views\Admin\AddSchool.cshtml" />
+    <Content Include="Views\Admin\EditSchool.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Parent\Filteration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SchoolsPic\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -325,11 +354,26 @@
     <EmbeddedResource Include="Migrations\201903140135392_FirstMigration.resx">
       <DependentUpon>201903140135392_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903140138470_SeedUsers.resx">
-      <DependentUpon>201903140138470_SeedUsers.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903141553582_FirstMigration1.resx">
       <DependentUpon>201903141553582_FirstMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903310953095_Schools.resx">
+      <DependentUpon>201903310953095_Schools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903310958076_Schools1.resx">
+      <DependentUpon>201903310958076_Schools1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903311012253_Schools2.resx">
+      <DependentUpon>201903311012253_Schools2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903311411129_Schools11.resx">
+      <DependentUpon>201903311411129_Schools11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903311413541_Schools12.resx">
+      <DependentUpon>201903311413541_Schools12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903311618136_Schools13.resx">
+      <DependentUpon>201903311618136_Schools13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

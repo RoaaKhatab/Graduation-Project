@@ -65,19 +65,20 @@ namespace SchoolGuide3.Controllers
                 var usr = db.UserAccount.Single(u => u.UserName == user.UserName && u.Password == user.Password);
                 
                
-                if(user.Usertype==1 && usr!=null)
+                if(usr.Usertype==1 && usr!=null)
                 {
                     Session["UserID"] = usr.UserID.ToString();
                     Session["Username"] = usr.UserName.ToString();
                     return RedirectToAction("Index", "Admin");
                 }
-               else if (usr!=null)
+              else if (usr!=null)
                 {
                     Session["UserID"] = usr.UserID.ToString();
                     Session["Username"] = usr.UserName.ToString();
                     return RedirectToAction("LoggedIn");
 
                 }
+                else
                 {
                     ModelState.AddModelError("", "username or password is wrong.");
                 }
@@ -101,7 +102,8 @@ namespace SchoolGuide3.Controllers
 
         public ActionResult LogouT()
         {
-            return RedirectToAction("Login");
+            Session.Abandon();
+            return RedirectToAction("Index","Home");
         }
 
     }

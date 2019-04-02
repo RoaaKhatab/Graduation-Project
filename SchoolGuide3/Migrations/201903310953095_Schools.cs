@@ -3,7 +3,7 @@ namespace SchoolGuide3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SeedUsers : DbMigration
+    public partial class Schools : DbMigration
     {
         public override void Up()
         {

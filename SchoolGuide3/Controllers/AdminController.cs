@@ -41,10 +41,59 @@ namespace SchoolGuide3.Controllers
             return RedirectToAction("ViewUsers");
         }
 
-       /* public ActionResult Details()
+        /* public ActionResult Details()
+         {
+             return View(db.UserAccount.ToList());
+         }
+         */
+        public ActionResult ViewSchools()
+
         {
-            return View(db.UserAccount.ToList());
+
+            return View(db.Schools.ToList());
+
         }
-        */
+
+        public ActionResult DeleteSchool(int id)
+        {
+            var School = db.Schools.Where(u => u.Sc_id.Equals(id)).SingleOrDefault();
+            db.Schools.Remove(School);
+            db.SaveChanges();
+            return RedirectToAction("ViewSchools");
+        }
+
+
+        public ActionResult AddSchool()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddSchool(Schools School, HttpPostedFileBase upload)
+        {
+            //String path = Path.Combine(Server.MapPath("~/SchoolsPic"), upload.FileName);
+            //upload.SaveAs(path);
+            //School.Sc_Image = upload.FileName;
+            db.Schools.Add(School);
+            db.SaveChanges();
+                                    
+            return RedirectToAction("ViewSchools");
+        }
+
+
+        public ActionResult EditSchool(int id)
+        {
+            return View(db.Schools.Where(c => c.Sc_id.Equals(id)).SingleOrDefault());
+        }
+        [HttpPost]
+        public ActionResult EditSchool(Schools school)
+        {
+            db.Entry<Schools>(school).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("ViewSchools");
+        }
+
+
+
     }
 }
