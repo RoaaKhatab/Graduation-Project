@@ -139,41 +139,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903140135392_FirstMigration.cs" />
-    <Compile Include="Migrations\201903140135392_FirstMigration.Designer.cs">
-      <DependentUpon>201903140135392_FirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903141553582_FirstMigration1.cs" />
-    <Compile Include="Migrations\201903141553582_FirstMigration1.Designer.cs">
-      <DependentUpon>201903141553582_FirstMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903310953095_Schools.cs" />
-    <Compile Include="Migrations\201903310953095_Schools.Designer.cs">
-      <DependentUpon>201903310953095_Schools.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903310958076_Schools1.cs" />
-    <Compile Include="Migrations\201903310958076_Schools1.Designer.cs">
-      <DependentUpon>201903310958076_Schools1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903311012253_Schools2.cs" />
-    <Compile Include="Migrations\201903311012253_Schools2.Designer.cs">
-      <DependentUpon>201903311012253_Schools2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903311411129_Schools11.cs" />
-    <Compile Include="Migrations\201903311411129_Schools11.Designer.cs">
-      <DependentUpon>201903311411129_Schools11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903311413541_Schools12.cs" />
-    <Compile Include="Migrations\201903311413541_Schools12.Designer.cs">
-      <DependentUpon>201903311413541_Schools12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903311618136_Schools13.cs" />
-    <Compile Include="Migrations\201903311618136_Schools13.Designer.cs">
-      <DependentUpon>201903311618136_Schools13.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904251339000_SchooleGuideInitial.cs" />
-    <Compile Include="Migrations\201904251339000_SchooleGuideInitial.Designer.cs">
-      <DependentUpon>201904251339000_SchooleGuideInitial.cs</DependentUpon>
+    <Compile Include="Migrations\201904251358278_SchooleGuideInitial.cs" />
+    <Compile Include="Migrations\201904251358278_SchooleGuideInitial.Designer.cs">
+      <DependentUpon>201904251358278_SchooleGuideInitial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Schools.cs" />
@@ -355,32 +323,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903140135392_FirstMigration.resx">
-      <DependentUpon>201903140135392_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903141553582_FirstMigration1.resx">
-      <DependentUpon>201903141553582_FirstMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903310953095_Schools.resx">
-      <DependentUpon>201903310953095_Schools.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903310958076_Schools1.resx">
-      <DependentUpon>201903310958076_Schools1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903311012253_Schools2.resx">
-      <DependentUpon>201903311012253_Schools2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903311411129_Schools11.resx">
-      <DependentUpon>201903311411129_Schools11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903311413541_Schools12.resx">
-      <DependentUpon>201903311413541_Schools12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903311618136_Schools13.resx">
-      <DependentUpon>201903311618136_Schools13.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904251339000_SchooleGuideInitial.resx">
-      <DependentUpon>201904251339000_SchooleGuideInitial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904251358278_SchooleGuideInitial.resx">
+      <DependentUpon>201904251358278_SchooleGuideInitial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

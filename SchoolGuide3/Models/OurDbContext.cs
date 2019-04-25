@@ -6,8 +6,12 @@ using System.Data.Entity;
 
 namespace SchoolGuide3.Models
 {
-    public class OurDbContext : DbContext
+    public class OurDbContext : DbContext 
     {
+        public OurDbContext() : base("SchoolGuideConnection")
+        {
+                
+        }
         public DbSet<Users> UserAccount { get; set; }
         public DbSet<Schools> Schools { get; set; }
         public DbSet<WishList> WishList { get; set; }
