@@ -19,6 +19,7 @@ namespace SchoolGuide3.Controllers
             {
                 return View();
             }
+
             else
             {
                 return RedirectToAction("login");

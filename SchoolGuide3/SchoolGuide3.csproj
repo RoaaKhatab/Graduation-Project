@@ -171,6 +171,10 @@
     <Compile Include="Migrations\201903311618136_Schools13.Designer.cs">
       <DependentUpon>201903311618136_Schools13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904251339000_SchooleGuideInitial.cs" />
+    <Compile Include="Migrations\201904251339000_SchooleGuideInitial.Designer.cs">
+      <DependentUpon>201904251339000_SchooleGuideInitial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Schools.cs" />
     <Compile Include="Models\Users.cs" />
@@ -374,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903311618136_Schools13.resx">
       <DependentUpon>201903311618136_Schools13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251339000_SchooleGuideInitial.resx">
+      <DependentUpon>201904251339000_SchooleGuideInitial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
